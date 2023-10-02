@@ -23,11 +23,14 @@
 
 <div class="wrapper">
     <h1>Przepisordle</h1>
-    <p class="daily">
-        {% if mode == 'daily' %}
-            Daily: {{ date|date('d-m-Y') }}
-        {% endif %}
+    <p class="links">
+        <a href="{{ path('app_index') }}">Daily</a> | <a href="{{ path('app_random') }}">Random</a>
     </p>
+    {% if mode == 'daily' %}
+    <h3 class="daily">
+            Daily: {{ date|date('d-m-Y') }}
+    </h3>
+    {% endif %}
     <div class="lives">
         {% for i in lives %}
             {% if i %}

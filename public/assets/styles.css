@@ -12,7 +12,7 @@ body {
 li {
     list-style-type: circle;
 }
-h1, .lives, form, .win, .lose, .daily {
+h1, .lives, form, .win, .lose, .daily, .links {
     text-align: center;
 }
 .lives {
@@ -36,7 +36,7 @@ form {
 }
 footer {
     text-align: center;
-    opacity: 0.15;
+    opacity: 0.35;
 }
 a {
     color: inherit;
