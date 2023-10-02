@@ -1,0 +1,48 @@
+body {
+    background-color: #121212;
+    color: #dddddd;
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+}
+.wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font-size: 18px;
+}
+li {
+    list-style-type: circle;
+}
+h1, .lives, form, .win, .lose, .daily {
+    text-align: center;
+}
+.lives {
+    font-size: 24px;
+    margin-bottom: 60px;
+}
+form {
+    margin-top: 60px;
+}
+#form_guess {
+    width: 500px !important;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #dddddd;
+    box-shadow: inset -5px -5px 5px -5px rgba(18, 18, 18, 1);
+}
+.ui-menu {
+    background-color: #444444;
+}
+footer {
+    text-align: center;
+    opacity: 0.15;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: underline;
+}

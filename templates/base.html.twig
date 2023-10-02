@@ -4,13 +4,25 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/jquery-ui.min.css" />
+        <link rel="stylesheet" href="/assets/styles.css" />
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% block javascripts %}
+        {% endblock %}
+        <footer>
+            <p>
+                <a href="{{ path('app_index') }}">Daily</a> | <a href="{{ path('app_random') }}">Random</a>
+            </p>
+            Kaotober 03.10.2023<br/>
+            🧑‍🍳 🙉 🙈 🙊
+        </footer>
     </body>
 </html>

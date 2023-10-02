@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Przepisordle{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/assets/jquery-ui.min.js"></script>
+    <script>
+        $( function() {
+            $( "#form_guess" ).autocomplete({
+                source: [ {{ recipes|raw }} ],
+                select: function( event, ui ) {
+                    event.preventDefault();
+                    $("#form_guess").val(ui.item.value);
+                    $("form").submit();
+                }
+            });
+        } );
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+    <h1>Przepisordle</h1>
+    <p class="daily">
+        {% if mode == 'daily' %}
+            Daily: {{ date|date('d-m-Y') }}
+        {% endif %}
+    </p>
+    <div class="lives">
+        {% for i in lives %}
+            {% if i %}
+                🟩
+            {% elseif i is null %}
+                🔳
+            {% else %}
+                🟥
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="ingredients">
+        <ul>
+            {% for i in recipe.ingredients %}
+                {% if loop.index <= show %}
+                    <li>{{ i }}</li>
+                {% else %}
+                    <li>???</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% if win == 0 %}
+    {{ form_start(form) }}
+        {{ form_widget(form.guess) }}
+    {{ form_end(form) }}
+    {% elseif win == 1 %}
+    <div class="win">
+        🎆🎆🎆 Gratulacje użytkowniku! 🎆🎆🎆 <br/>
+        Odpowiedź: <b>{{ recipe.name }}</b> <br/>
+        {% if mode == 'random' %}<a href="{{ path('app_random_reset') }}">Nowa gra</a>{% endif %}
+    </div>
+    {% else %}
+        <div class="lose">
+            😭😭😭 Porażka! 😭😭😭 <br/>
+            Odpowiedź: <b>{{ recipe.name }}</b> <br/>
+            {% if mode == 'random' %}<a href="{{ path('app_random_reset') }}">Nowa gra</a>{% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
