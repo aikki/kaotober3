@@ -15,12 +15,21 @@
 
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="wrapper">
+            {% block body %}{% endblock %}
+            <footer>
+                Kaotober 03.10.2023<br/>
+                🧑‍🍳 🙉 🙈 🙊
+            </footer>
+            <div class="instructions">
+                <h3>Instrukcje:</h3>
+                Celem gry jest znalezienie nazwy potrawy z bazy znając jedynie listę składników przepisu. <br/>
+                Gracz ma 5 prób aby zgadnąć nazwę, z każdą kolejną nietrafioną nazwą lista odkrytych składników się wydłuża. <br/>
+                W trybie daily do zgadnięcia jest jeden przepis dziennie (reset następuje o 00:00) <br/>
+                Wszystkie przepisy pochodzą ze strony: <a href="https://www.kwestiasmaku.com/">https://www.kwestiasmaku.com</a>
+            </div>
+        </div>
         {% block javascripts %}
         {% endblock %}
-        <footer>
-            Kaotober 03.10.2023<br/>
-            🧑‍🍳 🙉 🙈 🙊
-        </footer>
     </body>
 </html>

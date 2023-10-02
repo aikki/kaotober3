@@ -130,7 +130,7 @@ class RecipesController extends AbstractController
     }
 
 
-    #[Route('/recipes/add', name: 'app_recipes')]
+//    #[Route('/recipes/add', name: 'app_recipes')]
     public function addRecipe(Request $request, EntityManagerInterface $entityManager): Response
     {
         $recipe = new Recipe();

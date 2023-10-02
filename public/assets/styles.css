@@ -38,6 +38,8 @@ form {
 footer {
     text-align: center;
     opacity: 0.35;
+    margin: 50px 0;
+    font-size: 14px;
 }
 a {
     color: inherit;
@@ -46,4 +48,13 @@ a {
 a:hover {
     color: white;
     text-decoration: underline;
+}
+.instructions {
+    font-size: 14px;
+    opacity: 0.35;
+}
+.instructions:hover
+{
+    opacity: 0.7;
+    cursor: default;
 }

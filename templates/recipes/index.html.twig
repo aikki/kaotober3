@@ -21,7 +21,6 @@
 
 {% block body %}
 
-<div class="wrapper">
     <h1>Przepisordle</h1>
     <p class="links">
         <a href="{{ path('app_index') }}">Daily</a> | <a href="{{ path('app_random') }}">Random</a>
@@ -70,5 +69,4 @@
             {% if mode == 'random' %}<a href="{{ path('app_random_reset') }}">Nowa gra</a>{% endif %}
         </div>
     {% endif %}
-</div>
 {% endblock %}
