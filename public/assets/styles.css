@@ -23,7 +23,8 @@ form {
     margin-top: 60px;
 }
 #form_guess {
-    width: 500px !important;
+    width: 500px;
+    max-width: 90%;
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
