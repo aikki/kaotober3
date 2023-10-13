@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Steam keys generator{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/jquery-ui.min.css" />
+        <link href=" https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css " rel="stylesheet">
+        <style>
+            body {
+                background-color: #1b2838;
+                font-family: "Segoe UI", sans-serif;
+                color: rgb(198, 212, 223);
+            }
+            header {
+                background-color: #171d25;
+                height: 104px;
+                width: 100%;
+            }
+            header img {
+                height: 44px;
+                margin-top: 28px;
+            }
+            .wrapper {
+                max-width: 940px;
+                margin: auto;
+            }
+            .wrapper2 {
+                max-width: 400px;
+                padding: 30px;
+                margin: 40px auto;
+                background: linear-gradient(to bottom, rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.4) 100%);
+                text-align: center;
+            }
+            .wrapper2 img {
+                width: 100%;
+            }
+            h1 {
+                font-size: 18px;
+                margin: 20px 0;
+            }
+            .wrapper2 input {
+                background-color: #17212e;
+                border: 1px solid #23506a;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 20px;
+                width: 90%;
+                text-align: center;
+                color: #909090;
+            }
+            h3 {
+                font-size: 12px;
+                margin-top: 20px;
+                color: #909090;
+            }
+            h3 a {
+                color: #66c0f4;
+                text-decoration: none;
+            }
+            h3 a:hover {
+                text-decoration: underline;
+            }
+            h4 {
+                text-align: center;
+                font-size: 10px;
+                opacity: 0.3;
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <img src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"/>
+            </div>
+        </header>
+    <main class="wrapper">
+        <div class="wrapper2">
+            <img src="{{ imgurl }}" />
+            <h1>Your key for {{ title }}:</h1>
+            <input onClick="this.select();"  value="{{ key }}" readonly />
+            <h3>Key do not work? <a href="{{ path('app_steam') }}">Reload.</a></h3>
+        </div>
+    </main>
+        <h4>This page is purely satirical, pls Gabe Newell, do not ban me 🙏</h4>
+    </body>
+</html>
